@@ -1,7 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Login from "./Login";
 
 const App = () => {
-  return <h1>App Component</h1>;
+  return (
+    <Fragment>
+      <CssBaseline />
+      <Login />
+    </Fragment>
+  );
 };
 
 export default App;
