@@ -1,12 +1,20 @@
 import React, { Fragment } from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import Landing from "./Landing";
 import Login from "./Login";
 
 const App = () => {
   return (
     <Fragment>
       <CssBaseline />
-      <Login />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={Landing} exact />
+          <Route path="/login" component={Login} exact />
+          <Redirect to="/" />
+        </Switch>
+      </BrowserRouter>
     </Fragment>
   );
 };
