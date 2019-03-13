@@ -5,6 +5,24 @@ class AuthService {
     this.domain = domain || "http://localhost:5000";
   }
 
+  createAccount = async userData => {
+    const response = await this.fetch(`${this.domain}/users/create`, {
+      method: "POST",
+      body: JSON.stringify({
+        user: {
+          ...userData
+        }
+      })
+    });
+
+    const data = await response.json();
+    if (data.status === 200) {
+      await this.login(userData.email, userData.password);
+    }
+
+    return data;
+  };
+
   loggedIn = () => {
     const token = this.getToken();
     return !!token && !this.isTokenExpired(token);

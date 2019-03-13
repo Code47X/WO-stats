@@ -10,6 +10,7 @@ import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
 import CreateIcon from "@material-ui/icons/Create";
 import TimelineIcon from "@material-ui/icons/Timeline";
 import Divider from "@material-ui/core/Divider";
+import { Link } from "react-router-dom";
 import LandingStyles from "../styles/Landing";
 
 const Landing = props => {
@@ -23,9 +24,11 @@ const Landing = props => {
             <Typography variant="h3" className={classes.heroText}>
               Workout. Record. Analyze.
             </Typography>
-            <Button variant="contained" color="primary" size="large">
-              Create Account
-            </Button>
+            <Link to="/create_account" style={{ textDecoration: "none" }}>
+              <Button variant="contained" color="primary" size="large">
+                Create Account
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
