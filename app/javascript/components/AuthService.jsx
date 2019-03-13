@@ -6,7 +6,7 @@ class AuthService {
   }
 
   createAccount = async userData => {
-    const response = await this.fetch(`${this.domain}/users/create`, {
+    const response = await this.fetch("/users/create", {
       method: "POST",
       body: JSON.stringify({
         user: {
@@ -29,7 +29,7 @@ class AuthService {
   };
 
   login = async (email, password) => {
-    const response = await this.fetch(`${this.domain}/login`, {
+    const response = await this.fetch("/login", {
       method: "POST",
       body: JSON.stringify({
         auth: {
@@ -70,6 +70,7 @@ class AuthService {
   };
 
   fetch = (url, options) => {
+    const fullUrl = `${this.domain}${url}`;
     const headers = {
       // TODO: add new quote-props: consistent rule
       //       with next release of prettier (Yay!)
@@ -81,11 +82,11 @@ class AuthService {
       headers.Authorization = `Bearer ${this.getToken()}`;
     }
 
-    return fetch(url, {
+    return fetch(fullUrl, {
       headers,
       ...options
     });
   };
 }
 
-export default AuthService;
+export default new AuthService();

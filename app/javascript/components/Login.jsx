@@ -10,7 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
 import LoginStyles from "../styles/Login";
-import AuthService from "./AuthService";
+import Auth from "./AuthService";
 
 class Login extends React.Component {
   state = {
@@ -19,8 +19,6 @@ class Login extends React.Component {
       password: ""
     }
   };
-
-  Auth = new AuthService();
 
   handleChange = name => event => {
     const { loginForm } = this.state;
@@ -33,11 +31,11 @@ class Login extends React.Component {
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     const { loginForm } = this.state;
 
     event.preventDefault();
-    if (this.Auth.login(loginForm.email, loginForm.password)) {
+    if (await Auth.login(loginForm.email, loginForm.password)) {
       // TODO:
     } else {
       // TODO:

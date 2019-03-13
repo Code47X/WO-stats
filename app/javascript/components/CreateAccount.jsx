@@ -10,7 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
 import CreateAccountStyles from "../styles/CreateAccount";
-import AuthService from "./AuthService";
+import Auth from "./AuthService";
 
 class CreateAccount extends React.Component {
   state = {
@@ -21,8 +21,6 @@ class CreateAccount extends React.Component {
       password_confirmation: ""
     }
   };
-
-  Auth = new AuthService();
 
   handleChange = name => event => {
     const { createForm } = this.state;
@@ -40,7 +38,7 @@ class CreateAccount extends React.Component {
 
     event.preventDefault();
 
-    const data = await this.Auth.createAccount(createForm);
+    const data = await Auth.createAccount(createForm);
     if (data.status === 200) {
       // TODO: Account created and logged in
     } else {
