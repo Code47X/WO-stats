@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ReactRouterPropTypes from "react-router-prop-types";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import FormControl from "@material-ui/core/FormControl";
@@ -33,10 +34,11 @@ class Login extends React.Component {
 
   handleSubmit = async event => {
     const { loginForm } = this.state;
+    const { history } = this.props;
 
     event.preventDefault();
     if (await Auth.login(loginForm.email, loginForm.password)) {
-      // TODO:
+      history.push("/profile");
     } else {
       // TODO:
     }
@@ -97,7 +99,8 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  classes: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
+  classes: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  history: ReactRouterPropTypes.history.isRequired
 };
 
 export default withStyles(LoginStyles)(Login);
