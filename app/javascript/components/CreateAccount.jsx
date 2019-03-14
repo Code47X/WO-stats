@@ -78,7 +78,6 @@ class CreateAccount extends React.Component {
                 id="email"
                 value={createForm.email}
                 onChange={this.handleChange("email")}
-                autoFocus
               />
             </FormControl>
             <FormControl margin="normal" required fullWidth>

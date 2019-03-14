@@ -8,6 +8,5 @@ class User < ApplicationRecord
 
   validates_presence_of :username, :email
   validates_uniqueness_of :username, :email
-
-  validates_confirmation_of :password, allow_nil: true
+  
 end
