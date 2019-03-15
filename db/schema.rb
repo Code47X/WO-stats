@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_001903) do
+ActiveRecord::Schema.define(version: 2019_03_15_020255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "exercise_names", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.bigint "workout_id"
+    t.bigint "exercise_name_id"
+    t.float "weight"
+    t.float "reps"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercise_name_id"], name: "index_exercises_on_exercise_name_id"
+    t.index ["workout_id"], name: "index_exercises_on_workout_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
@@ -22,6 +39,13 @@ ActiveRecord::Schema.define(version: 2019_03_05_001903) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email"
+  end
+
+  create_table "workouts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_workouts_on_user_id"
   end
 
 end

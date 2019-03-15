@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   post 'login' => 'user_token#create'
   get '/users/current' => 'users#current'
   post '/users/create' => 'users#create'
+  get '/exercise_names' => 'exercise_names#index'
+  get '/workouts' => 'workouts#index'
 end
