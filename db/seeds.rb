@@ -14,5 +14,6 @@ exName2 = ExerciseName.create({name: "Bicep curls"})
 workout1 = Workout.create({user: u})
 workout2 = Workout.create({user: u})
 
-workout1.exercises << Exercise.create({exercise_name: exName1, weight: 135, reps: 15})
-workout1.exercises << Exercise.create({exercise_name: exName2, weight: 45, reps: 15})
+workout1.exercises << Exercise.create({exercise_name: exName1.name, weight: 135, reps: 15})
+workout1.exercises << Exercise.create({exercise_name: exName2.name, weight: 45, reps: 15})
+workout1.exercises << Exercise.create({exercise_name: "Invalid", weight: 45, reps: 15})

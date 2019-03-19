@@ -23,12 +23,11 @@ ActiveRecord::Schema.define(version: 2019_03_15_020255) do
 
   create_table "exercises", force: :cascade do |t|
     t.bigint "workout_id"
-    t.bigint "exercise_name_id"
+    t.string "exercise_name"
     t.float "weight"
     t.float "reps"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["exercise_name_id"], name: "index_exercises_on_exercise_name_id"
     t.index ["workout_id"], name: "index_exercises_on_workout_id"
   end
 
