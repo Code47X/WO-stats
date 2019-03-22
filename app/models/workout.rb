@@ -1,4 +1,8 @@
 class Workout < ApplicationRecord
   belongs_to :user
   has_many :exercises
+
+  validates_presence_of :exercises
+
+  accepts_nested_attributes_for :exercises, allow_destroy: true
 end

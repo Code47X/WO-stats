@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   post '/users/create' => 'users#create'
   get '/exercise_names' => 'exercise_names#index'
   get '/workouts' => 'workouts#index'
+  post '/workouts' => 'workouts#create'
+  put '/workouts/:id' => 'workouts#update'
+  delete '/workouts/:id' => 'workouts#destroy'
 end
