@@ -6,14 +6,74 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u = User.create({username: "demo", email: "demo@demo.com", password: "password", password_confirmation: "password"});
+demoUser = User.create({username: "demo", email: "demo@demo.com", password: "password", password_confirmation: "password"});
 
-exName1 = ExerciseName.create({name: "Benchpress"})
-exName2 = ExerciseName.create({name: "Bicep curls"})
+ExerciseName.create({name: "Bench press"})
+ExerciseName.create({name: "Squat"})
+ExerciseName.create({name: "Leg press"})
+ExerciseName.create({name: "Pull up"})
+ExerciseName.create({name: "Push up"})
+ExerciseName.create({name: "Chin up"})
+ExerciseName.create({name: "Shoulder press"})
+ExerciseName.create({name: "Bent-over row"})
+ExerciseName.create({name: "Bicep curl"})
+ExerciseName.create({name: "Dead lift"})
 
-workout1 = Workout.create({user: u})
-workout2 = Workout.create({user: u})
+demoUser.workouts << Workout.create({
+  exercises_attributes: [
+    {
+      exercise_name: "Bench press",
+      reps: 15,
+      weight: 135
+    },
+    {
+      exercise_name: "Pull up",
+      reps: 20,
+      weight: 135
+    },
+    {
+      exercise_name: "Push up",
+      reps: 20,
+      weight: 145
+    }
+  ]
+})
 
-workout1.exercises << Exercise.create({exercise_name: exName1.name, weight: 135, reps: 15})
-workout1.exercises << Exercise.create({exercise_name: exName2.name, weight: 45, reps: 15})
-workout1.exercises << Exercise.create({exercise_name: "Invalid", weight: 45, reps: 15})
+demoUser.workouts << Workout.create({
+  exercises_attributes: [
+    {
+      exercise_name: "Squat",
+      reps: 15,
+      weight: 185
+    },
+    {
+      exercise_name: "Leg press",
+      reps: 10,
+      weight: 200
+    }
+  ]
+})
+
+demoUser.workouts << Workout.create({
+  exercises_attributes: [
+    {
+      exercise_name: "Chin up",
+      reps: 20,
+      weight: 145
+    },
+    {
+      exercise_name: "Shoulder press",
+      reps: 15,
+      weight: 45
+    },
+    {
+      exercise_name: "Dead lift",
+      reps: 15,
+      weight: 165
+    }
+  ]
+})
+
+demoUser.workouts.first.update_attribute :created_at, 5.days.ago
+demoUser.workouts.second.update_attribute :created_at, 4.days.ago
+demoUser.workouts.third.update_attribute :created_at, 3.days.ago
