@@ -74,6 +74,66 @@ demoUser.workouts << Workout.create({
   ]
 })
 
+demoUser.workouts << Workout.create({
+  exercises_attributes: [
+    {
+      exercise_name: "Chin up",
+      reps: 20,
+      weight: 145
+    },
+    {
+      exercise_name: "Shoulder press",
+      reps: 15,
+      weight: 45
+    },
+    {
+      exercise_name: "Dead lift",
+      reps: 15,
+      weight: 165
+    }
+  ]
+})
+
+demoUser.workouts << Workout.create({
+  exercises_attributes: [
+    {
+      exercise_name: "Chin up",
+      reps: 20,
+      weight: 145
+    },
+    {
+      exercise_name: "Shoulder press",
+      reps: 15,
+      weight: 45
+    },
+    {
+      exercise_name: "Dead lift",
+      reps: 15,
+      weight: 165
+    }
+  ]
+})
+
+demoUser.workouts << Workout.create({
+  exercises_attributes: [
+    {
+      exercise_name: "Chin up",
+      reps: 20,
+      weight: 145
+    },
+    {
+      exercise_name: "Shoulder press",
+      reps: 15,
+      weight: 45
+    },
+    {
+      exercise_name: "Dead lift",
+      reps: 15,
+      weight: 165
+    }
+  ]
+})
+
 demoUser.workouts.first.update_attribute :created_at, 5.days.ago
 demoUser.workouts.second.update_attribute :created_at, 4.days.ago
 demoUser.workouts.third.update_attribute :created_at, 3.days.ago
