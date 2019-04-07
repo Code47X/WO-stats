@@ -17,6 +17,8 @@ const App = () => {
           <Route path="/create_account" component={CreateAccount} exact />
           <Route path="/login" component={Login} exact />
           <PrivateRoute path="/profile" component={Profile} exact />
+          <PrivateRoute path="/workouts" component={Profile} exact />
+          <PrivateRoute path="/workouts/new" component={Profile} exact />
           <Redirect to="/" />
         </Switch>
       </BrowserRouter>

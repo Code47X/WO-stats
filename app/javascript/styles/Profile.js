@@ -1,33 +1,16 @@
 const ProfileStyles = theme => ({
-  layout: {
-    width: "auto",
-    marginLeft: theme.spacing.unit * 3,
-    marginRight: theme.spacing.unit * 3,
-    [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-      width: 1100,
-      marginLeft: "auto",
-      marginRight: "auto"
+  root: {
+    display: "flex"
+  },
+  content: {
+    flexGrow: 1,
+    marginTop: "56px",
+    height: "10000px",
+    padding: theme.spacing.unit * 2,
+
+    [theme.breakpoints.up("sm")]: {
+      marginTop: "64px"
     }
-  },
-  cardGrid: {
-    padding: `${theme.spacing.unit * 8}px 0`
-  },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column"
-  },
-  cardContent: {
-    flexGrow: 1
-  },
-  pieContainer: {
-    height: "200px",
-    width: "99%", // cant be 100% so that recharts can calculate the width correctly within flexbox
-    margin: "auto",
-    backgroundColor: "#505050"
-  },
-  cardActions: {
-    marginLeft: "auto"
   }
 });
 
