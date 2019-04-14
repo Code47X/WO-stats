@@ -34,9 +34,7 @@ class WorkoutService {
   fetch = (url, options) => {
     const fullUrl = `${this.domain}${url}`;
     const headers = {
-      // TODO: add new quote-props: consistent rule
-      //       with next release of prettier (Yay!)
-      Accept: "application/json",
+      "Accept": "application/json",
       "Content-Type": "application/json"
     };
 
