@@ -27,9 +27,109 @@ demoUser.workouts << Workout.create({
       weight: 135
     },
     {
-      exercise_name: "Pull up",
+      exercise_name: "Squat",
+      reps: 15,
+      weight: 150
+    },
+    {
+      exercise_name: "Push up",
       reps: 20,
-      weight: 135
+      weight: 145
+    }
+  ]
+})
+
+demoUser.workouts << Workout.create({
+  exercises_attributes: [
+    {
+      exercise_name: "Bench press",
+      reps: 15,
+      weight: 140
+    },
+    {
+      exercise_name: "Squat",
+      reps: 20,
+      weight: 150
+    },
+    {
+      exercise_name: "Push up",
+      reps: 20,
+      weight: 145
+    }
+  ]
+})
+
+demoUser.workouts << Workout.create({
+  exercises_attributes: [
+    {
+      exercise_name: "Bench press",
+      reps: 17,
+      weight: 140
+    },
+    {
+      exercise_name: "Squat",
+      reps: 15,
+      weight: 155
+    },
+    {
+      exercise_name: "Push up",
+      reps: 20,
+      weight: 145
+    }
+  ]
+})
+
+demoUser.workouts << Workout.create({
+  exercises_attributes: [
+    {
+      exercise_name: "Bench press",
+      reps: 20,
+      weight: 140
+    },
+    {
+      exercise_name: "Squat",
+      reps: 15,
+      weight: 160
+    },
+    {
+      exercise_name: "Push up",
+      reps: 20,
+      weight: 145
+    }
+  ]
+})
+
+demoUser.workouts << Workout.create({
+  exercises_attributes: [
+    {
+      exercise_name: "Bench press",
+      reps: 10,
+      weight: 145
+    },
+    {
+      exercise_name: "Squat",
+      reps: 20,
+      weight: 160
+    },
+    {
+      exercise_name: "Push up",
+      reps: 20,
+      weight: 145
+    }
+  ]
+})
+
+demoUser.workouts << Workout.create({
+  exercises_attributes: [
+    {
+      exercise_name: "Bench press",
+      reps: 14,
+      weight: 145
+    },
+    {
+      exercise_name: "Squat",
+      reps: 18,
+      weight: 160
     },
     {
       exercise_name: "Push up",
@@ -44,72 +144,12 @@ demoUser.workouts << Workout.create({
     {
       exercise_name: "Squat",
       reps: 15,
-      weight: 185
+      weight: 165
     },
     {
       exercise_name: "Leg press",
       reps: 10,
       weight: 200
-    }
-  ]
-})
-
-demoUser.workouts << Workout.create({
-  exercises_attributes: [
-    {
-      exercise_name: "Chin up",
-      reps: 20,
-      weight: 145
-    },
-    {
-      exercise_name: "Shoulder press",
-      reps: 15,
-      weight: 45
-    },
-    {
-      exercise_name: "Dead lift",
-      reps: 15,
-      weight: 165
-    }
-  ]
-})
-
-demoUser.workouts << Workout.create({
-  exercises_attributes: [
-    {
-      exercise_name: "Chin up",
-      reps: 20,
-      weight: 145
-    },
-    {
-      exercise_name: "Shoulder press",
-      reps: 15,
-      weight: 45
-    },
-    {
-      exercise_name: "Dead lift",
-      reps: 15,
-      weight: 165
-    }
-  ]
-})
-
-demoUser.workouts << Workout.create({
-  exercises_attributes: [
-    {
-      exercise_name: "Chin up",
-      reps: 20,
-      weight: 145
-    },
-    {
-      exercise_name: "Shoulder press",
-      reps: 15,
-      weight: 45
-    },
-    {
-      exercise_name: "Dead lift",
-      reps: 15,
-      weight: 165
     }
   ]
 })
