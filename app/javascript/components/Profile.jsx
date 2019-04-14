@@ -144,6 +144,7 @@ class Profile extends React.Component {
                     type="monotone"
                     dataKey="weight"
                     stroke="#8884d8"
+                    strokeWidth="2.5"
                     activeDot={{ r: 8 }}
                   />
                   <Line
@@ -151,6 +152,8 @@ class Profile extends React.Component {
                     type="monotone"
                     dataKey="reps"
                     stroke="#82ca9d"
+                    strokeWidth="1.5"
+                    strokeDasharray="5 5"
                   />
                 </LineChart>
               </ResponsiveContainer>
@@ -183,6 +186,7 @@ class Profile extends React.Component {
                     type="monotone"
                     dataKey="weight"
                     stroke="#8884d8"
+                    strokeWidth="2.5"
                     activeDot={{ r: 8 }}
                   />
                   <Line
@@ -190,6 +194,8 @@ class Profile extends React.Component {
                     type="monotone"
                     dataKey="reps"
                     stroke="#82ca9d"
+                    strokeWidth="1.5"
+                    strokeDasharray="5 5"
                   />
                 </LineChart>
               </ResponsiveContainer>
