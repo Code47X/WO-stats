@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
@@ -76,7 +76,7 @@ class Profile extends React.Component {
     const { workouts } = this.state;
 
     return (
-      <div className={classes.root}>
+      <Fragment>
         <NavBar />
         <div className={classes.content}>
           <div className={classes.basicContainer}>
@@ -202,7 +202,7 @@ class Profile extends React.Component {
             </Paper>
           </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

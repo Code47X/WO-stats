@@ -14,7 +14,7 @@
     "prettier/prettier": [
       "error",
       {
-        "quoteProps": "consistent"
+        "quoteProps": "preserve"
       }
     ]
   },

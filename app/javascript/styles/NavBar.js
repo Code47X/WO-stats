@@ -1,57 +1,28 @@
-const drawerWidth = 240;
-
 const NavBarStyles = theme => ({
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
-  },
-  appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen
-    })
+  grow: {
+    flexGrow: 1
   },
   menuButton: {
-    marginLeft: 12,
-    marginRight: 36
+    marginLeft: -12,
+    marginRight: 20
   },
-  hide: {
-    display: "none"
+  drawerContainer: {
+    width: 320,
+    height: "100%"
   },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-    whiteSpace: "nowrap"
+  xContainer: {
+    width: "100%",
+    textAlign: "right"
   },
-  drawerOpen: {
-    width: drawerWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen
-    })
+  xButton: {
+    marginTop: 5,
+    marginRight: 5,
+    padding: 3
   },
-  drawerClose: {
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    }),
-    overflowX: "hidden",
-    width: theme.spacing.unit * 7 + 1,
-    [theme.breakpoints.up("sm")]: {
-      width: theme.spacing.unit * 9 + 1
-    }
-  },
-  toolbar: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: "0 8px",
-    ...theme.mixins.toolbar
+  drawerTitle: {
+    margin: "-10px 0px 20px",
+    textAlign: "center",
+    color: theme.palette.primary.main
   }
 });
 
